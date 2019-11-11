@@ -22,7 +22,7 @@ function isWon() {
         //Check digonals
         case boxArray[0] == boxArray[4] && boxArray[4] == boxArray[8] && boxArray[0] != -1:
         case boxArray[2] == boxArray[4] && boxArray[4] == boxArray[6] && boxArray[2] != -1:
-            alert(`Player ${turn} won`);
+            alert(`Player ${turn == 1 ? "'X'" : "'O'"} won`);
             init();
     }
 
