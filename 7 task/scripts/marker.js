@@ -41,7 +41,7 @@ class RefuelingMarcker extends Marker {
 const rmarker = new RefuelingMarcker();
 
 while (true) {
-    if (rmarker.print('1') == '0%')
+    if (rmarker.print('HEY HEY') == '0%')
         break;
 }
 
