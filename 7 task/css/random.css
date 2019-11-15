@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(7, 31, 37);
+}
+
+h1 {
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+.box {
+    margin: 5%;
+    width: auto;
+}
+
+.number {
+    font-size: 40px;
+    font-weight: 900;
+    color: rgb(245, 197, 126) ;
+    margin-left: 10%;
+}
+
+.button {
+    /* border: 3px solid black; */
+    border-radius: 5px;
+    font-size: 15px;
+    margin-left: 1%;
+}

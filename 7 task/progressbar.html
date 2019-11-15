@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress bar</title>
+    <link rel="stylesheet" href="/css/progressbar.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Progress bar</h1>
+    </div>
+    <div class="bar-container box">
+        <div id="custom-bar" class="bar" style="width:0%">0%</div>
+    </div>
+    <div class="box">
+        <button class="button box" onclick="moveBar()">Add 5%</button>
+    </div>
+
+    <script src="/scripts/progressbar.js"></script>
+</body>
+
+</html>
