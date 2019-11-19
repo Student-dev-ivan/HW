@@ -1,0 +1,78 @@
+@keyframes redLight {
+    from {
+        background-color: gray;
+    }
+    to {
+        background-color: red;
+    }
+}
+
+@keyframes yellowLight {
+    from {
+        background-color: gray;
+    }
+    to {
+        background-color: yellow;
+    }
+}
+
+@keyframes greenLight {
+    from {
+        background-color: gray;
+    }
+    to {
+        background-color: green;
+    }
+}
+
+.content {
+    padding: 50px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shape {
+    width: 60px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.btn {
+    background-color: rgb(199, 199, 199);
+    padding: 5px 11px;
+    border: none;
+    color: black;
+    margin-top: 30px;
+    padding: 10px, px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(255, 185, 79);
+}
+
+.light {
+    width: 0px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    animation-duration: 2s;
+}
+
+body {
+    background-color: rgb(7, 31, 37);
+}
+
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blanchedalmond;
+}
