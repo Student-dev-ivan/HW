@@ -155,5 +155,5 @@ function modifyQuality(item, numToAdd) {
 
 for (let i = 0; i < 55; i++) {
   update_quality(items);
-  console.log(items.forEach(item => console.log(item)));
+  console.log(items.forEach(item => { console.log(item) }));
 }
