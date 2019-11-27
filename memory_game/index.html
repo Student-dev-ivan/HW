@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Card pairs</title>
+</head>
+
+<body>
+    <header></header>
+    <h1 class="page-title">Find matches</h1>
+    <div class="overlay-text visible">Start</div>
+    <div id="game-over" class="overlay-text">Game over<span class="overlay-text-restart">Restart</span></div>
+    <div id="victory" class="overlay-text">Victory<span class="overlay-text-restart">Restart</span></div>
+    <div class="info-container">
+        <div class="info-field">
+            Flips <span id="flips">0</span>
+        </div>
+        <div class="info-field">
+            Time <span id="timer">120</span>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration visible">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/css.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/css.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/electron.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/electron.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/node.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/node.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/vue.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/vue.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/mongo.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/mongo.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/js.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/js.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/react.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/react.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/angular.png" alt="?smiley">
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-back card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/question_mark.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/question_mark.png" alt="?">
+            <img class="smiley" src="assets/images/card_back.png" alt="?smiley">
+        </div>
+        <div class="card-face card-decoration">
+            <img class="corner-image corner-image-top-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-top-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-left" src="assets/images/smiley_face.png" alt="?">
+            <img class="corner-image corner-image-bottom-right" src="assets/images/smiley_face.png" alt="?">
+            <img class="card-value" src="assets/images/angular.png" alt="?smiley">
+        </div>
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
