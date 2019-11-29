@@ -5,7 +5,7 @@ class MusicBox {
         this.matchSound = new Audio('./assets/sounds/match.mp3');
         this.flipSound = new Audio('./assets/sounds/flip_sound.mp3');
         this.backgroundMusic = new Audio('./assets/sounds/background.mp3');
-        this.backgroundMusic.volume = 0.1;
+        this.backgroundMusic.volume = 0.3;
         this.backgroundMusic.loop = true;
     }
     playMusic() {
