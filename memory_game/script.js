@@ -5,7 +5,7 @@ class MusicBox {
         this.matchSound = new Audio('./assets/sounds/match.mp3');
         this.flipSound = new Audio('./assets/sounds/flip_sound.mp3');
         this.backgroundMusic = new Audio('./assets/sounds/background.mp3');
-        this.backgroundMusic.volume = 0.3;
+        this.backgroundMusic.volume = 0.1;
         this.backgroundMusic.loop = true;
     }
     playMusic() {
@@ -16,9 +16,11 @@ class MusicBox {
         this.backgroundMusic.currentTime = 0;
     }
     victory() {
+        this.stopMusic();
         this.victorySound.play();
     }
     gameOver() {
+        this.stopMusic();
         this.gameOverSound.play();
     }
     flip() {
@@ -35,53 +37,103 @@ class Matcher {
         this.totalTime = totalTime;
         this.remainingTime = totalTime;
         this.musicBox = new MusicBox();
-        this.timer = document.querySelector('#timer');
-        this.flipsCount = document.querySelector('#flips');
+        this.timerDisplay = document.querySelector('#timer');
+        this.flipsDisplay = document.querySelector('#flips');
+        this.flipsCount = 0;
         this.firstCard = null;
         this.secondCard = null;
         this.hasFlippedCard = false;
         this.lockCards = false;
+        this.matchesCount = 0;
+        this.matchesArray = [];
     }
     startGame() {
+        this.hideCards();
+        this.timerDisplay.innerText = this.totalTime;
+        this.flipsDisplay.innerText = 0;
+        this.matchesArray = [];
         this.remainingTime = this.totalTime;
         this.flipsCount = 0;
+        this.matchesCount = 0;
+        [this.firstCard, this.secondCard] = [null, null];
         this.musicBox.playMusic();
+        this.shuffle();
+        this.timer = this.startTimer();
     }
 
-    //Refactor divide by funcs
     flipCard(card) {
-        if (this.lockCards) {
+        if (this.lockCards || this.firstCard === card || this.matchesArray.includes(card)) {
             return;
         }
-        this.musicBox.flip();
+
         card.classList.add('visible');
+        this.musicBox.flip();
+        this.flipsCount++;
+        this.flipsDisplay.innerText = this.flipsCount;
 
         if (!this.hasFlippedCard) {
             this.hasFlippedCard = true;
             this.firstCard = card;
-            console.log(this.hasFlippedCard, this.firstCard);
         } else {
             this.hasFlippedCard = false;
             this.secondCard = card;
-            this.lockCards = true;
-            console.log(this.hasFlippedCard, this.secondCard);
-            if (this.firstCard.querySelector('.card-value').src ===
-                this.secondCard.querySelector('.card-value').src) {
-                console.log('I am here');
-
-                this.musicBox.match();
-                this.firstCard.removeEventListener('click', this.flipCard)
-                this.secondCard.removeEventListener('click', this.flipCard)
-                this.lockCards = false;
-            } else {
-                setTimeout(() => {
-                    this.firstCard.classList.remove('visible');
-                    this.secondCard.classList.remove('visible');
-                    this.lockCards = false;
-                }, 1000);
-
-            }
+            this.matchCheck();
         }
+    }
+
+    matchCheck() {
+        this.firstCard.querySelector('.card-value').src === this.secondCard.querySelector('.card-value').src ?
+            this.removeListenersAddMatch() : this.flipBack();
+    }
+    removeListenersAddMatch() {
+        // this.firstCard.removeEventListener('click', this.flipCard);
+        // this.secondCard.removeEventListener('click', this.flipCard);
+        this.musicBox.match();
+        this.firstCard.classList.add('matched');
+        this.secondCard.classList.add('matched');
+        this.matchesArray.push(this.firstCard, this.secondCard);
+        ++this.matchesCount === 8 ? this.victory() : null
+    }
+    flipBack() {
+        this.lockCards = true;
+        setTimeout(() => {
+            this.firstCard.classList.remove('visible');
+            this.secondCard.classList.remove('visible');
+            this.lockCards = false;
+        }, 1000);
+    }
+    shuffle() {
+        const cardsLength = this.cards.length - 1;
+        for (let i = cardsLength; i > 0; i--) {
+            let randomIndex = Math.floor(Math.random() * (i + 1));
+            this.cards[randomIndex].style.order = i;
+            this.cards[i].style.order = randomIndex + 1;
+        }
+    }
+    startTimer() {
+        return setInterval(() => {
+            this.remainingTime--;
+            this.timerDisplay.innerText = this.remainingTime;
+            if (this.remainingTime === 0) {
+                this.gameOver();
+            }
+        }, 1000);
+    }
+    victory() {
+        clearInterval(this.timer);
+        this.musicBox.victory();
+        document.querySelector('#victory').classList.add('visible');
+    }
+    gameOver() {
+        clearInterval(this.timer);
+        this.musicBox.gameOver();
+        document.querySelector('#game-over').classList.add('visible');
+    }
+    hideCards() {
+        this.cards.forEach((card) => {
+            card.classList.remove('visible');
+            card.classList.remove('matched');
+        });
     }
 }
 
@@ -91,33 +143,17 @@ function game() {
     const overlays = Array.from(document.querySelectorAll('.overlay-text'));
     const cards = Array.from(document.querySelectorAll('.card'));
 
-    let matcher = new Matcher(100, cards);
+    let matcher = new Matcher(60, cards);
 
 
     overlays.forEach(text => text.addEventListener('click', () => {
         text.classList.remove('visible');
         matcher.startGame();
     }));
+
+
+
     cards.forEach(card => card.addEventListener('click', () => matcher.flipCard(card)));
 }
 
 
-
-
-
-
-// document.querySelectorAll('.card').forEach((card) => card.addEventListener('click', card => card.classList.toggle('visible')))
-
-
-
-
-
-
-// function shuffle(){
-//     let cards = Array.from(document.querySelectorAll('.card'));
-//     for (let i = cards.length; i < 0; i--) {
-//         let randomIndex = Math.floor(Math.random() * (i+1));
-//         card[randomIndex].style.order = i;
-//         cards[i].style.order = randomIndex;
-//     }
-// }
